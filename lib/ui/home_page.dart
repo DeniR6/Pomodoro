@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pomodoro_page.dart';
 import 'statistics_page.dart';
+import 'wiki_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,6 +16,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = const [
     PomodoroPage(),
     StatisticsPage(),
+    WikiPage(),
   ];
 
   @override
@@ -39,6 +41,11 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.bar_chart_outlined),
             selectedIcon: Icon(Icons.bar_chart),
             label: 'Statistik',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.account_balance_sharp),
+            selectedIcon: Icon(Icons.account_balance),
+            label: 'Wiki',
           ),
         ],
       ),

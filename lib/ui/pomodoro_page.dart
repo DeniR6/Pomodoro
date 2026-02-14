@@ -39,7 +39,7 @@ class _PomodoroPageState extends ConsumerState<PomodoroPage> {
 
     /// 🎨 Phasenfarbe
     final Color phaseColor = state.isWorkTime
-        ? Colors.red
+        ? Colors.deepPurple
         : state.isLongBreak
         ? Colors.blue
         : Colors.green;
@@ -74,7 +74,7 @@ class _PomodoroPageState extends ConsumerState<PomodoroPage> {
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
-                  color: phaseColor,
+                  color: Colors.black,
                 ),
               ),
 
@@ -89,7 +89,8 @@ class _PomodoroPageState extends ConsumerState<PomodoroPage> {
                   children: [
                     CircularProgressIndicator(
                       value: progress,
-                      strokeWidth: 12,
+                      strokeWidth: 32,
+                      strokeAlign: 5,
                       backgroundColor: phaseColor.withOpacity(0.15),
                       valueColor:
                       AlwaysStoppedAnimation<Color>(phaseColor),
@@ -124,7 +125,7 @@ class _PomodoroPageState extends ConsumerState<PomodoroPage> {
                     state.isRunning ? notifier.pause : notifier.start,
                     child: Text(
                       state.isRunning ? 'Pause' : 'Start',
-                      style: const TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16, color: Colors.black),
                     ),
                   ),
                   const SizedBox(width: 16),
@@ -191,7 +192,7 @@ class _PomodoroPageState extends ConsumerState<PomodoroPage> {
 
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: phaseColor,
+                          backgroundColor: Colors.white38,
                           minimumSize:
                           const Size(double.infinity, 45),
                           shape: RoundedRectangleBorder(
@@ -215,7 +216,7 @@ class _PomodoroPageState extends ConsumerState<PomodoroPage> {
                             ),
                           );
                         },
-                        child: const Text("Übernehmen"),
+                        child: const Text("Übernehmen", style: TextStyle(color: Colors.black),),
                       ),
                     ],
                   ),
